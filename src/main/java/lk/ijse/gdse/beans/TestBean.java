@@ -3,12 +3,16 @@ package lk.ijse.gdse.beans;
 import jakarta.annotation.PreDestroy;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 
-@Component("testBean") // apit onam nmk dennt puluwn nttnm default clz name eka gnnw (Ex: testbean)
+@Component("testBean")
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+// apit onam nmk dennt puluwn nttnm default clz name eka gnnw (Ex: testbean)
 public class TestBean implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, InitializingBean, DisposableBean {
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
