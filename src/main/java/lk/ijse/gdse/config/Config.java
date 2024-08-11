@@ -1,5 +1,6 @@
 package lk.ijse.gdse.config;
 
+import lk.ijse.gdse.aop.Logs;
 import lk.ijse.gdse.beans.Customer;
 import lk.ijse.gdse.beans.Order;
 import org.springframework.context.annotation.Bean;
@@ -7,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration // This is a configuration class
-@ComponentScan(basePackageClasses = {Customer.class})
+@ComponentScan(basePackageClasses = {Customer.class, Logs.class})
 //@ComponentScan(basePackages = "lk.ijse.gdse")  // This will scan the package for components
 public class Config {
 
